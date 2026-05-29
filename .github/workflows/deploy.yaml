@@ -25,9 +25,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22  # ← 强行升级到 Node 22，完美契合 Quartz 5.0
       - name: Install Dependencies
-        run: npm install
+        run: npm i --legacy-peer-deps
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
