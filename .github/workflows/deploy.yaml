@@ -25,9 +25,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22  # ← 强行升级到 Node 22，完美契合 Quartz 5.0
+          node-version: 22
       - name: Install Dependencies
         run: npm i --legacy-peer-deps
+      - name: Initialize Quartz Config (Fix Hidden Folder)
+        run: npx quartz create --strategy update  # ← 核心：强行在云端初始化出隐藏的 .quartz 目录！
       - name: Build Quartz
         run: npx quartz build
       - name: Upload artifact
