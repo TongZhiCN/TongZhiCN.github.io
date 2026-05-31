@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: TongZhiCN.github.io
+  baseUrl: TongZhiCN.github.io/note
   ignorePatterns:
     - private
     - templates
